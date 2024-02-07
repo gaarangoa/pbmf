@@ -1,4 +1,4 @@
-# Predictive Biomarker Modeling Framework (PBMF) demo
+# PBMF demo
 This repository contains the instructions to test the PBMF
 
 ## Request access to the PBMF repository
