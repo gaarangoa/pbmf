@@ -18,4 +18,6 @@ USER root
 RUN chown -R ${NB_UID} ${HOME} 
 
 RUN pip install git+https://github.com/gaarangoa/samecode.git
+
 WORKDIR ${HOME}
+RUN pip install .
