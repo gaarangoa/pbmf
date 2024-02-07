@@ -1,7 +1,8 @@
 # PBMF 
-This repository contains the instructions to test the PBMF
+we present an automated neural network framework based on contrastive learning, which we have named the predictive biomarker modeling framework (PBMF). This general-purpose framework explores potential predictive biomarkers in a systematic and unbiased manner.
 
-![alt text](./track.gif)
+
+![alt text](./track.gif) Under the hood, the contrastive loss in the PBMF searches for a biomarker that maximizes the benefit under treatment of interest while at the same time minimizes the effect of the control treatment.
 
 ## Run notebook and explore results
 
