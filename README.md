@@ -7,8 +7,8 @@ https://mybinder.org/
 
 ## Request access to the PBMF repository
 
-  1: Please request access to the PBMF using this link:
-  2: After you are granted access to the repository, download the source code and upload it to your jupyter ${HOME} directory
+*1: Please request access to the PBMF using this link:
+*2: After you are granted access to the repository, download the source code and upload it to your jupyter ${HOME} directory
 
 
 
