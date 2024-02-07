@@ -26,16 +26,14 @@ The PBMF is an automated neural network framework based on contrastive learning.
 ```
 ##### ARM M1 processors
 ```bash
-    docker build . --tag pbmf
-
+    docker build -f Dockerfile.arm . --tag pbmf
     docker run -it --rm -p 8888:8888 pbmf jupyter notebook --NotebookApp.default_url=/lab/ --ip=0.0.0.0 --port=8888 --allow-root
 
 ```
 
 ##### x86-64 based processors
 ```bash
-    docker build . --tag pbmf
-
+    docker build -f Dockerfile.x86-64 . --tag pbmf
     docker run -it --rm -p 8888:8888 pbmf jupyter notebook --NotebookApp.default_url=/lab/ --ip=0.0.0.0 --port=8888 --allow-root
 ```
 
