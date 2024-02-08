@@ -50,6 +50,8 @@ data_test['predictive_biomarker_risk'] = pbmf.predict(data_test, epoch=500)
 data_test['predicted_label'] = (data_test['predictive_biomarker_risk'] > 0.5).replace([False, True], ['B-', 'B+'])
 
 ```
+### PBMF demo
+Under <code>./demos/</code> you will find a complete guide on how to use the framework. 
 
 ## System Requirements
 ### Hardware requirements
@@ -110,7 +112,9 @@ The easiest way to get started with the PBMF is to run it through a docker conta
     docker run -it --rm -p 8888:8888 pbmf jupyter notebook --NotebookApp.default_url=/lab/ --ip=0.0.0.0 --port=8888 --allow-root
 ```
 
-
-
 ### Dependencies for manuscript experiments
 All experiments in the manuscript were performend in our internal HCP. We used multiple nodes with 100 cores for running the PBMF in parallel. No GPU acceleration was enabled. The HCP used <code>Ubuntu 18.04</code>. For each run we deployed docker containers using <code>singularity version=3.7.1</code> the image used is available at docker hub (<code>gaarangoa/dsai:version-2.0.3_tf2.6.0_pt1.9.0</code>).
+
+
+## License
+The code is freely available under the MIT License
