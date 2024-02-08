@@ -92,6 +92,7 @@ The easiest way to get started with the PBMF is to run it through a docker conta
     cd ./pbmf/
 
     # Build the docker image
+    docker pull gaarangoa/ml:v2.1.0.1_ARM
     docker build -f Dockerfile.arm . --tag pbmf
 
     # Launch a jupyter notebook
@@ -106,6 +107,7 @@ The easiest way to get started with the PBMF is to run it through a docker conta
     cd ./pbmf/
 
     # Build the docker image
+    docker pull gaarangoa/dsai:version-2.0.3_tf2.6.0_pt1.9.0
     docker build -f Dockerfile.x86-64 . --tag pbmf
 
     # Launch a jupyter notebook
