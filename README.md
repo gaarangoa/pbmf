@@ -3,6 +3,67 @@ The PBMF is an automated neural network framework based on contrastive learning.
 
 ![alt text](./track.gif) Under the hood, the PBMF searches for a biomarker that maximizes the benefit under treatment of interest while at the same time minimizes the effect of the control treatment.
 
+## Quick tour
+We implemented the PBMF closer to the sklearn API. 
+
+```python
+
+from PBMF.attention.model_zoo.SimpleModel import Net
+from PBMF.attention.model_zoo.Ensemble import EnsemblePBMF
+
+# Define the neural network parameters
+params = dict(
+    ignore_patients_frac=0.1, # During training, ignore this % of patients before computing the loss
+    layers=[64], # each neural networks has one layer of 64 units
+    epochs=500, # number of epochs
+    minp=0.75, # force the model to get a minimum population 
+    w1=1.0, # w1 parameter in the loss (predictive loss)
+    w2=0.0, # w2 parameter in the loss (for minp)
+    seed=0,
+    learning_rate=0.01,
+    shuffle=True,
+    l1=0.0, # L1 normalization
+)
+
+# Setup ensemble
+pbmf = EnsemblePBMF(
+    time=time, 
+    event=event,
+    treatment=treatment,
+    stratify=treatment,
+    features = features,
+    discard_n_features=1, # discard n features on each PBMF model
+    architecture=Net, # Architecrture to use, we are using a simple NN.
+    **params
+)
+
+# Train ensemble model
+pbmf.fit(
+    data_train, # Dataframe with the processed data
+    num_models=10, # number of PBMF models used in the ensemble
+    n_jobs=4,
+    test_size=0.2, # Discard this fraction (randomly) of patients when fiting a PBMF model
+    outdir='./runs/experiment_0/',
+    save_freq=100,
+)
+
+```
+
+Once the model is trained, get the predictive biomarker scores and labels is as simple as:
+```python
+# Load the ensemble PBMF
+pbmf = EnsemblePBMF()
+pbmf.load(
+    architecture=Net,
+    outdir='./runs/experiment_0/',
+    num_models=10,
+)
+
+# Retrieve scores for predictive biomarker positive / negative
+data_test['predictive_biomarker_risk'] = pbmf.predict(data_test, epoch=500)
+data_test['predicted_label'] = (data_test['predictive_biomarker_risk'] > 0.5).replace([False, True], ['B-', 'B+'])
+
+```
 
 ## System Requirements
 ### Hardware requirements
@@ -65,5 +126,5 @@ The easiest way to get started with the PBMF is to run it through a docker conta
 
 
 
-### Dependencies for experiments in manuscript
+### Dependencies for manuscript experiments
 All experiments in the manuscript were performend in our internal HCP. We used multiple nodes with 100 cores for running the PBMF in parallel. No GPU acceleration was enabled. The HCP used <code>Ubuntu 18.04</code>. For each run we deployed docker containers using <code>singularity version=3.7.1</code> the image used is available at docker hub (<code>gaarangoa/dsai:version-2.0.3_tf2.6.0_pt1.9.0</code>).
