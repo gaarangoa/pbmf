@@ -4,7 +4,7 @@ The PBMF is an automated neural network framework based on contrastive learning.
 ![alt text](./track.gif) Under the hood, the PBMF searches for a biomarker that maximizes the benefit under treatment of interest while at the same time minimizes the effect of the control treatment.
 
 ## Quick tour
-The PBMF is run as follows: 
+The PBMF runs as follows: 
 
 ```python
 
@@ -47,6 +47,7 @@ pbmf.load(
 
 # Retrieve scores for predictive biomarker positive / negative
 data_test['predictive_biomarker_risk'] = pbmf.predict(data_test, epoch=500)
+# Generate biomarker positive and negative labels
 data_test['predicted_label'] = (data_test['predictive_biomarker_risk'] > 0.5).replace([False, True], ['B-', 'B+'])
 
 ```
