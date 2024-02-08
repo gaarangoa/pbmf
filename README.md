@@ -11,20 +11,6 @@ We implemented the PBMF closer to the sklearn API.
 from PBMF.attention.model_zoo.SimpleModel import Net
 from PBMF.attention.model_zoo.Ensemble import EnsemblePBMF
 
-# Define the neural network parameters
-params = dict(
-    ignore_patients_frac=0.1, # During training, ignore this % of patients before computing the loss
-    layers=[64], # each neural networks has one layer of 64 units
-    epochs=500, # number of epochs
-    minp=0.75, # force the model to get a minimum population 
-    w1=1.0, # w1 parameter in the loss (predictive loss)
-    w2=0.0, # w2 parameter in the loss (for minp)
-    seed=0,
-    learning_rate=0.01,
-    shuffle=True,
-    l1=0.0, # L1 normalization
-)
-
 # Setup ensemble
 pbmf = EnsemblePBMF(
     time=time, 
