@@ -5,8 +5,9 @@ The PBMF is an automated neural network framework based on contrastive learning.
 ![alt text](./track.gif) Under the hood, the PBMF searches for a biomarker that maximizes the benefit under treatment of interest while at the same time minimizes the effect of the control treatment.
 
 
-
 ## System Requirements
+The PBMF runs in <code>Python > 3</code>
+
 
 ### Hardware requirements
 ### Software requirements
