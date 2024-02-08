@@ -33,29 +33,37 @@ seaborn==0.11.1
 The PBMF has been also tested with latest updates of the listed libraries.
 
 ## Installation guide
-### Install from Github
-
-
-## setting up the environment
 ### Docker container
+The easiest way to get started with the PBMF is to run it through a docker container. We have created an image with all necessary libraries and these containers should seamlessly work.
 
-#### Build the docker image
+#### For macOS ARM processors:
 ```bash
+    # Download the PBMF repository
     git clone https://github.com/gaarangoa/pbmf.git
     cd ./pbmf/
-```
-##### ARM M1 processors
-```bash
+
+    # Build the docker image
     docker build -f Dockerfile.arm . --tag pbmf
+
+    # Launch a jupyter notebook
     docker run -it --rm -p 8888:8888 pbmf jupyter notebook --NotebookApp.default_url=/lab/ --ip=0.0.0.0 --port=8888 --allow-root
 
 ```
 
-##### x86-64 based processors
+##### For x86-64 processors:
 ```bash
+    # Download the PBMF repository
+    git clone https://github.com/gaarangoa/pbmf.git
+    cd ./pbmf/
+
+    # Build the docker image
     docker build -f Dockerfile.x86-64 . --tag pbmf
+
+    # Launch a jupyter notebook
     docker run -it --rm -p 8888:8888 pbmf jupyter notebook --NotebookApp.default_url=/lab/ --ip=0.0.0.0 --port=8888 --allow-root
 ```
 
-### Requirements for experiments
-All experiments in the manuscript were performend in our internal HCP. We used multiple nodes with 100 cores for running the PBMF in parallel. No GPU acceleration was enabled. The HCP used <code>Ubuntu 18.04</code>. For each run we deployed docker containers using <code>singularity version=3.7.1</code> the image used is available at docker hub (<code>gaarangoa/dsai:version-2.0.3_tf2.6.0_pt1.9.0</code>). Environment seed was set to 0. 
+
+
+### Dependencies for experiments in manuscript
+All experiments in the manuscript were performend in our internal HCP. We used multiple nodes with 100 cores for running the PBMF in parallel. No GPU acceleration was enabled. The HCP used <code>Ubuntu 18.04</code>. For each run we deployed docker containers using <code>singularity version=3.7.1</code> the image used is available at docker hub (<code>gaarangoa/dsai:version-2.0.3_tf2.6.0_pt1.9.0</code>).
