@@ -66,6 +66,7 @@ This python package is supported for macOS and Linux. The PBMF has been tested o
 #### OS requirements
 * macOS: Sonoma
 * Linux: Ubuntu 18.04 LTS
+* Windows: WSL2 / ubuntu / x86_64
 
 
 #### Python dependencies
