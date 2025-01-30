@@ -1,0 +1,9 @@
+control: Control
+event: event
+features:
+- num_age
+- num_risk
+- fac_type_bin
+time: time
+treat: Treatment
+treatment: fac_trt

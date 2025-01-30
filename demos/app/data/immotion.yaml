@@ -1,0 +1,14 @@
+control: Sunitinib
+event: event
+features:
+- SEX (M=1;F=0)
+- LivMets
+- TEffector
+- PrevNeph
+- Age
+- Plasma IL8 (pg/mL)
+- SLD (Sum of longest diameter)
+- sample_type
+time: time
+treat: Atezo+B
+treatment: ARM

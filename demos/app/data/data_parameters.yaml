@@ -1,0 +1,6 @@
+checkmate: 
+    time: 'time'
+    event: 'event'
+    treatment: 'ARM'
+    control: 'Everolimus'
+    treat: 'Nivolumab'

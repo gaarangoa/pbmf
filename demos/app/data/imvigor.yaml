@@ -1,0 +1,13 @@
+control: Chemo
+event: event
+features:
+- SEX (M=1;F=0)
+- LivMets
+- Plasma IL8 (C1D1) (pg/mL)
+- Plasma IL8 (C3D1) (pg/mL)
+- Plasma IL8 ratio (C3D1/C1D1)
+- ECOG
+- Age
+time: time
+treat: Atezo
+treatment: Treatment

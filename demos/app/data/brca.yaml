@@ -1,0 +1,13 @@
+control: Chemo
+event: event
+features:
+- age
+- meno
+- size
+- grade
+- nodes
+- pr
+- er
+time: time
+treat: Hormone
+treatment: ARM
