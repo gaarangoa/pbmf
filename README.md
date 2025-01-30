@@ -51,8 +51,10 @@ data_test['predictive_biomarker_risk'] = pbmf.predict(data_test, epoch=500)
 data_test['predicted_label'] = (data_test['predictive_biomarker_risk'] > 0.5).replace([False, True], ['B-', 'B+'])
 
 ```
-### PBMF demo
-Under <code>./demos/</code> you will find a complete guide on how to use the framework. 
+### PBMF demos
+* Under <code>./demos/</code> you will find a complete guide on how to use the framework. 
+* under <code>./demos/app</code> you can find the app for visualizing the distilation trees and * interpretability. 
+* under <code>./demos/simulation</code> we have an example on how to build synthetic survival datasets.
 
 ## System Requirements
 ### Hardware requirements
