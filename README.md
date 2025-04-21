@@ -1,5 +1,7 @@
 # Predictive Biomarker Modeling Framework (PBMF) 
-The PBMF is an automated neural network framework based on contrastive learning. This general-purpose framework explores potential predictive biomarkers in a systematic and unbiased manner.
+The PBMF (<a href="https://www.cell.com/cancer-cell/fulltext/S1535-6108(25)00130-8#fig1" open=blank_>Publised in Cancer cell </a>) is an automated neural network framework based on contrastive learning. This general-purpose framework explores potential predictive biomarkers in a systematic and unbiased manner.
+
+
 
 ![alt text](./track.gif) Under the hood, the PBMF searches for a biomarker that maximizes the benefit under treatment of interest while at the same time minimizes the effect of the control treatment.
 
@@ -136,3 +138,15 @@ All experiments in the manuscript were performend in our internal HCP. We used m
 
 ## License
 The code is freely available under the MIT License
+
+## Citation
+If you use this work in any form, please cite as follows:
+```bibtex
+@article{arango2025ai,
+  title={AI-driven predictive biomarker discovery with contrastive learning to improve clinical trial outcomes},
+  author={Arango-Argoty, Gustavo and Bikiel, Damian E and Sun, Gerald J and Kipkogei, Elly and Smith, Kaitlin M and Pro, Sebastian Carrasco and Choe, Elizabeth Y and Jacob, Etai},
+  journal={Cancer Cell},
+  year={2025},
+  publisher={Elsevier}
+}
+```
