@@ -86,6 +86,18 @@ seaborn==0.11.1
 The PBMF has been also tested with latest updates of the listed libraries.
 
 ## Installation guide
+### Basic installation
+```bash
+pip install tensorflow==2.6.0
+pip install scipy==1.5.4
+pip install numpy==1.19.5
+pip install scikit-learn==0.24.1
+pip install pandas==1.1.5
+pip install seaborn==0.11.1 
+pip install --no-cache-dir git+https://github.com/gaarangoa/samecode.git
+pip install --no-cache-dir git+https://github.com/gaarangoa/pbmf.git
+```
+
 ### Docker container
 The easiest way to get started with the PBMF is to run it through a docker container. We have created an image with all necessary libraries and these containers should seamlessly work.
 
